@@ -48,9 +48,12 @@
                                             <span class="icon-arrow-down"></span>
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
+                                            @foreach ($business_categories as $bs)
+                                                <a class="dropdown-item"
+                                                    href="{{ route('businesses', $bs->id) }}">{{ $bs->name }}</a>
+                                            @endforeach
+                                            {{-- <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a> --}}
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -103,7 +106,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="slider-content_wrap">
-                                    <h1>Discover great places in New york</h1>
+                                    <h1>Discover great businesses and amazing places in Kenya</h1>
                                     <h5>Let's uncover the best places to eat, drink, and shop nearest to you.</h5>
                                 </div>
                             </div>
@@ -114,7 +117,7 @@
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <input type="text" placeholder="What are your looking for?"
                                             class="btn-group1">
-                                        <input type="text" placeholder="New york" class="btn-group2">
+                                        <input type="text" placeholder="Nairobi" class="btn-group2">
                                         <button type="submit" class="btn-form"><span
                                                 class="icon-magnifier search-icon"></span>SEARCH<i
                                                 class="pe-7s-angle-right"></i></button>

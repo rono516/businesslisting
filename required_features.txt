@@ -1,0 +1,25 @@
+Some of the required features for this application
+
+Users creating businesses
+Users updating their businesses
+-> name
+-> location
+-> timelines
+-> photos to showcase their work
+-> Reviews
+
+
+-> Other users can post reviews anonymously
+-> Users can search businesses by categories, locations and keywords
+-> Users can contact businesses from the site
+-> Messages from users can be sent to the business owner via text, email
+-> Should check availability times of businesses and update whether open or closed
+
+
+How about offering apprentice jobs/opportunities by business owners
+
+
+How about offering delivery services for the businesses
+How about adding maps containing all the businesses listed on the platform
+How about adding payment options so that customers can pay and have their products delivered
+How about 
