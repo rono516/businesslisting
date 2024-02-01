@@ -1,140 +1,759 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <title>Laravel</title>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Colorlib">
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+    <!-- Page Title -->
+    <title>Business Listing</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
+    <!-- Simple line Icon -->
+    <link rel="stylesheet" href="{{ asset('assets/css/simple-line-icons.css') }}">
+    <!-- Themify Icon -->
+    <link rel="stylesheet" href="{{ asset('assets/css/themify-icons.css') }}">
+    <!-- Hover Effects -->
+    <link rel="stylesheet" href="{{ asset('assets/css/set1.css') }}">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+</head>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, sans-serif;font-feature-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::-webkit-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mx-6{margin-left:1.5rem;margin-right:1.5rem}.ml-4{margin-left:1rem}.mt-16{margin-top:4rem}.mt-6{margin-top:1.5rem}.mt-4{margin-top:1rem}.-mt-px{margin-top:-1px}.mr-1{margin-right:0.25rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-16{height:4rem}.h-7{height:1.75rem}.h-6{height:1.5rem}.h-5{height:1.25rem}.min-h-screen{min-height:100vh}.w-auto{width:auto}.w-16{width:4rem}.w-7{width:1.75rem}.w-6{width:1.5rem}.w-5{width:1.25rem}.max-w-7xl{max-width:80rem}.shrink-0{flex-shrink:0}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.gap-4{gap:1rem}.self-center{align-self:center}.rounded-lg{border-radius:0.5rem}.rounded-full{border-radius:9999px}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity))}.bg-dots-darker{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E")}.from-gray-700\/50{--tw-gradient-from:rgb(55 65 81 / 0.5);--tw-gradient-to:rgb(55 65 81 / 0);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0);--tw-gradient-stops:var(--tw-gradient-from), transparent, var(--tw-gradient-to)}.bg-center{background-position:center}.stroke-red-500{stroke:#ef4444}.stroke-gray-400{stroke:#9ca3af}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-gray-500\/20{--tw-shadow-color:rgb(107 114 128 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-red-500 *::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-red-500::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}.focus\:rounded-sm:focus{border-radius:0.125rem}.focus\:outline:focus{outline-style:solid}.focus\:outline-2:focus{outline-width:2px}.focus\:outline-red-500:focus{outline-color:#ef4444}.group:hover .group-hover\:stroke-gray-600{stroke:#4b5563}.z-10{z-index: 10}@media (prefers-reduced-motion: no-preference){.motion-safe\:hover\:scale-\[1\.01\]:hover{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}@media (prefers-color-scheme: dark){.dark\:bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:bg-gray-800\/50{background-color:rgb(31 41 55 / 0.5)}.dark\:bg-red-800\/20{background-color:rgb(153 27 27 / 0.2)}.dark\:bg-dots-lighter{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E")}.dark\:bg-gradient-to-bl{background-image:linear-gradient(to bottom left, var(--tw-gradient-stops))}.dark\:stroke-gray-600{stroke:#4b5563}.dark\:text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:shadow-none{--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.dark\:ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.dark\:ring-inset{--tw-ring-inset:inset}.dark\:ring-white\/5{--tw-ring-color:rgb(255 255 255 / 0.05)}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.group:hover .dark\:group-hover\:stroke-gray-400{stroke:#9ca3af}}@media (min-width: 640px){.sm\:fixed{position:fixed}.sm\:top-0{top:0px}.sm\:right-0{right:0px}.sm\:ml-0{margin-left:0px}.sm\:flex{display:flex}.sm\:items-center{align-items:center}.sm\:justify-center{justify-content:center}.sm\:justify-between{justify-content:space-between}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:gap-8{gap:2rem}.lg\:p-8{padding:2rem}}
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="max-w-7xl mx-auto p-6 lg:p-8">
-                <div class="flex justify-center">
-                    <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
-                        <path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="#FF2D20"/>
-                    </svg>
-                </div>
-
-                <div class="mt-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Documentation</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                </p>
+<body>
+    <!--============================= HEADER =============================-->
+    <div class="nav-menu">
+        <div class="bg transition">
+            <div class="container-fluid fixed">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" href="index.html">Listing</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="icon-menu"></span>
+                            </button>
+                            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Explore
+                                            <span class="icon-arrow-down"></span>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink1"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Listing
+                                            <span class="icon-arrow-down"></span>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink2"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Pages
+                                            <span class="icon-arrow-down"></span>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Blog</a>
+                                    </li>
+                                    <li><a href="#" class="btn btn-outline-light top-btn"><span
+                                                class="ti-plus"></span> Add Listing</a></li>
+                                </ul>
                             </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laracasts.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laracasts</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laravel-news.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel News</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Forge</a>, <a href="https://vapor.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Vapor</a>, <a href="https://nova.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Nova</a>, and <a href="https://envoyer.io" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Telescope</a>, and more.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-left">
-                        <div class="flex items-center gap-4">
-                            <a href="https://github.com/sponsors/taylorotwell" class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="-mt-px mr-1 w-5 h-5 stroke-gray-400 dark:stroke-gray-600 group-hover:stroke-gray-600 dark:group-hover:stroke-gray-400">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                </svg>
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                        </nav>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+    <!-- SLIDER -->
+    <section class="slider d-flex align-items-center">
+        <!-- <img src="images/slider.jpg" class="img-fluid" alt="#"> -->
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12">
+                    <div class="slider-title_box">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="slider-content_wrap">
+                                    <h1>Discover great places in New york</h1>
+                                    <h5>Let's uncover the best places to eat, drink, and shop nearest to you.</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-10">
+                                <form class="form-wrap mt-4">
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <input type="text" placeholder="What are your looking for?"
+                                            class="btn-group1">
+                                        <input type="text" placeholder="New york" class="btn-group2">
+                                        <button type="submit" class="btn-form"><span
+                                                class="icon-magnifier search-icon"></span>SEARCH<i
+                                                class="pe-7s-angle-right"></i></button>
+                                    </div>
+                                </form>
+                                <div class="slider-link">
+                                    <a href="#">Browse Popular</a><span>or</span> <a href="#">Recently
+                                        Added</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--// SLIDER -->
+    <!--//END HEADER -->
+    <!--============================= FIND PLACES =============================-->
+    <section class="main-block">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="styled-heading">
+                        <h3>What do you need to find?</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="find-place-img_wrap">
+                        <div class="grid">
+                            <figure class="effect-ruby">
+                                <img src="{{ asset('assets/images/find-place1.jpg') }}" class="img-fluid"
+                                    alt="img13" />
+                                <figcaption>
+                                    <h5>Nightlife </h5>
+                                    <p>385 Listings</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row find-img-align">
+                        <div class="col-md-12">
+                            <div class="find-place-img_wrap">
+                                <div class="grid">
+                                    <figure class="effect-ruby">
+                                        <img src="{{ asset('assets/images/find-place2.jpg') }}" class="img-fluid"
+                                            alt="img13" />
+                                        <figcaption>
+                                            <h5>Restaurants</h5>
+                                            <p>210 Listings</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="find-place-img_wrap">
+                                <div class="grid">
+                                    <figure class="effect-ruby">
+                                        <img src="{{ asset('assets/images/find-place3.jpg') }}" class="img-fluid"
+                                            alt="img13" />
+                                        <figcaption>
+                                            <h5>Outdoors </h5>
+                                            <p>114 Listings</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row find-img-align">
+                        <div class="col-md-12">
+                            <div class="find-place-img_wrap">
+                                <div class="grid">
+                                    <figure class="effect-ruby">
+                                        <img src="{{ asset('assets/images/find-place4.jpg') }}" class="img-fluid"
+                                            alt="img13" />
+                                        <figcaption>
+                                            <h5>Hotels </h5>
+                                            <p>577 Listings</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="find-place-img_wrap">
+                                <div class="grid">
+                                    <figure class="effect-ruby">
+                                        <img src="{{ asset('assets/images/find-place5.jpg') }}" class="img-fluid"
+                                            alt="img13" />
+                                        <figcaption>
+                                            <h5>Art & Culture </h5>
+                                            <p>79 Listings</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//END FIND PLACES -->
+    <!--============================= FEATURED PLACES =============================-->
+    <section class="main-block light-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="styled-heading">
+                        <h3>Featured Places</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 featured-responsive">
+                    <div class="featured-place-wrap">
+                        <a href="detail.html">
+                            <img src="{{ asset('assets/images/featured1.jpg') }}" class="img-fluid" alt="#">
+                            <span class="featured-rating-orange">6.5</span>
+                            <div class="featured-title-box">
+                                <h6>Burger & Lobster</h6>
+                                <p>Restaurant </p> <span>• </span>
+                                <p>3 Reviews</p> <span> • </span>
+                                <p><span>$$$</span>$$</p>
+                                <ul>
+                                    <li><span class="icon-location-pin"></span>
+                                        <p>1301 Avenue, Brooklyn, NY 11230</p>
+                                    </li>
+                                    <li><span class="icon-screen-smartphone"></span>
+                                        <p>+44 20 7336 8898</p>
+                                    </li>
+                                    <li><span class="icon-link"></span>
+                                        <p>https://burgerandlobster.com</p>
+                                    </li>
+
+                                </ul>
+                                <div class="bottom-icons">
+                                    <div class="closed-now">CLOSED NOW</div>
+                                    <span class="ti-heart"></span>
+                                    <span class="ti-bookmark"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 featured-responsive">
+                    <div class="featured-place-wrap">
+                        <a href="detail.html">
+                            <img src="{{ asset('assets/images/featured2.jpg') }}" class="img-fluid" alt="#">
+                            <span class="featured-rating-green">9.5</span>
+                            <div class="featured-title-box">
+                                <h6>Joe’s Shanghai</h6>
+                                <p>Restaurant </p> <span>• </span>
+                                <p>3 Reviews</p> <span> • </span>
+                                <p><span>$$$</span>$$</p>
+                                <ul>
+                                    <li><span class="icon-location-pin"></span>
+                                        <p>1301 Avenue, Brooklyn, NY 11230</p>
+                                    </li>
+                                    <li><span class="icon-screen-smartphone"></span>
+                                        <p>+44 20 7336 8898</p>
+                                    </li>
+                                    <li><span class="icon-link"></span>
+                                        <p>https://burgerandlobster.com</p>
+                                    </li>
+
+                                </ul>
+                                <div class="bottom-icons">
+                                    <div class="closed-now">CLOSED NOW</div>
+                                    <span class="ti-heart"></span>
+                                    <span class="ti-bookmark"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 featured-responsive">
+                    <div class="featured-place-wrap">
+                        <a href="detail.html">
+                            <img src="{{ asset('assets/images/featured3.jpg') }}" class="img-fluid" alt="#">
+                            <span class="featured-rating">3.2</span>
+                            <div class="featured-title-box">
+                                <h6>Tasty Hand-Pulled Noodles</h6>
+                                <p>Restaurant </p> <span>• </span>
+                                <p>3 Reviews</p> <span> • </span>
+                                <p><span>$$$</span>$$</p>
+                                <ul>
+                                    <li><span class="icon-location-pin"></span>
+                                        <p>1301 Avenue, Brooklyn, NY 11230</p>
+                                    </li>
+                                    <li><span class="icon-screen-smartphone"></span>
+                                        <p>+44 20 7336 8898</p>
+                                    </li>
+                                    <li><span class="icon-link"></span>
+                                        <p>https://burgerandlobster.com</p>
+                                    </li>
+
+                                </ul>
+                                <div class="bottom-icons">
+                                    <div class="open-now">OPEN NOW</div>
+                                    <span class="ti-heart"></span>
+                                    <span class="ti-bookmark"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="featured-btn-wrap">
+                        <a href="#" class="btn btn-danger">VIEW ALL</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//END FEATURED PLACES -->
+    <!--============================= CATEGORIES =============================-->
+    <section class="main-block">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="styled-heading">
+                        <h3>Browse Categories</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach ($business_categories as $bs)
+                    <div class="col-md-3 category-responsive">
+                        <a href="{{ route('businesses', $bs->id) }}" class="category-wrap">
+                            <div class="category-block">
+                                {!! $bs->icon !!}
+                                <h6>{{ $bs->name }}</h6>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+                {{-- <div class="col-md-3 category-responsive">
+                    <a href="#" class="category-wrap">
+                        <div class="category-block">
+                            <svg class="category-img" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px"
+                                y="0px" viewBox="0 0 469.824 469.824"
+                                style="enable-background:new 0 0 469.824 469.824;" xml:space="preserve"
+                                width="512px" height="512px">
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M188.885,67.36C147.84,26.336,67.52,21.579,10.667,21.579C4.779,21.579,0,26.357,0,32.245    c0,56.853,4.736,137.173,45.781,178.219c17.323,17.323,43.883,25.067,70.208,25.067c28.608,0,56.96-9.152,72.896-25.088    C219.456,179.872,225.067,103.52,188.885,67.36z M173.803,195.381c-22.827,22.805-86.208,26.709-112.917,0    C27.755,162.251,22.016,94.944,21.397,42.976c51.968,0.619,119.275,6.357,152.405,39.488    C200.512,109.173,196.608,172.576,173.803,195.381z"
+                                                data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                                fill="#ff3a6d" />
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M459.157,63.776c-56.853,0-137.173,4.736-178.219,45.781c-36.181,36.16-30.571,112.512,0,143.083    c15.936,15.915,44.267,25.067,72.875,25.067c26.325,0,52.864-7.723,70.229-25.045c41.024-41.045,45.781-121.365,45.781-178.219    C469.824,68.555,465.045,63.776,459.157,63.776z M408.917,237.557c-26.709,26.709-90.112,22.805-112.917,0    c-22.805-22.805-26.709-86.208,0-112.917c33.131-33.131,100.437-38.869,152.405-39.488    C447.787,137.141,442.048,204.448,408.917,237.557z"
+                                                data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                                fill="#ff3a6d" />
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M382.123,156.107c-2.517-5.355-9.728-7.189-15.04-4.715c-81.813,38.464-122.005,105.536-140.267,174.485    c-22.592-146.603-87.936-191.296-115.648-210.261c-3.456-2.368-6.144-4.096-7.637-5.568c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083c2.112,2.091,5.76,4.715,10.688,8.085c31.232,21.355,114.197,78.123,114.197,304.363    c0,5.888,4.779,10.667,10.667,10.667s10.667-4.779,10.667-10.645c0-91.413,24.555-211.925,141.504-266.88    c0-0.021,1.728-0.832,1.728-0.832C383.211,167.371,384.64,161.44,382.123,156.107z"
+                                                data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                                fill="#ff3a6d" />
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                            <h6>Beauty & Spa</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 category-responsive">
+                    <a href="#" class="category-wrap">
+                        <div class="category-block">
+                            <svg class="category-img" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_2" x="0px"
+                                y="0px" viewBox="0 0 503.607 503.607"
+                                style="enable-background:new 0 0 503.607 503.607;" xml:space="preserve"
+                                width="512px" height="512px">
+                                <g>
+                                    <g transform="translate(1 1)">
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="M494.213,452.246h-25.18V7.393c0-5.036-3.357-8.393-8.393-8.393H40.967c-5.036,0-8.393,3.357-8.393,8.393v444.852H7.393     c-5.036,0-8.393,3.357-8.393,8.393v33.574c0,5.036,3.357,8.393,8.393,8.393h486.82c5.036,0,8.393-3.357,8.393-8.393v-33.574     C502.607,455.603,499.249,452.246,494.213,452.246z M49.361,15.787h402.885v436.459H326.344v-92.328     c0-5.036-3.357-8.393-8.393-8.393h-67.148h-67.148c-5.036,0-8.393,3.357-8.393,8.393v92.328H49.361V15.787z M192.049,452.246     v-83.934h50.361v83.934H192.049z M259.197,368.311h50.361v83.934h-50.361V368.311z M485.82,485.82H15.787v-16.787h25.18h142.689     h67.148h67.148h142.689h25.18V485.82z"
+                                                    data-original="#000000" class="active-path"
+                                                    data-old_color="#ff3a6d" fill="#ff3a6d" />
+                                                <path
+                                                    d="M158.475,40.967H91.328c-5.036,0-8.393,3.357-8.393,8.393v50.361c0,5.036,3.357,8.393,8.393,8.393h67.148     c5.036,0,8.393-3.357,8.393-8.393V49.361C166.869,44.325,163.511,40.967,158.475,40.967z M150.082,91.328H99.721V57.754h50.361     V91.328z"
+                                                    data-original="#000000" class="active-path"
+                                                    data-old_color="#ff3a6d" fill="#ff3a6d" />
+                                                <path
+                                                    d="M158.475,133.295H91.328c-5.036,0-8.393,3.357-8.393,8.393v50.361c0,5.036,3.357,8.393,8.393,8.393h67.148     c5.036,0,8.393-3.357,8.393-8.393v-50.361C166.869,136.652,163.511,133.295,158.475,133.295z M150.082,183.656H99.721v-33.574     h50.361V183.656z"
+                                                    data-original="#000000" class="active-path"
+                                                    data-old_color="#ff3a6d" fill="#ff3a6d" />
+                                                <path
+                                                    d="M217.229,200.443h67.148c5.036,0,8.393-3.357,8.393-8.393v-50.361c0-5.036-3.357-8.393-8.393-8.393h-67.148     c-5.036,0-8.393,3.357-8.393,8.393v50.361C208.836,197.085,212.193,200.443,217.229,200.443z M225.623,150.082h50.361v33.574     h-50.361V150.082z"
+                                                    data-original="#000000" class="active-path"
+                                                    data-old_color="#ff3a6d" fill="#ff3a6d" />
+                                                <path
+                                                    d="M343.131,200.443h67.148c5.036,0,8.393-3.357,8.393-8.393v-50.361c0-5.036-3.357-8.393-8.393-8.393h-67.148     c-5.036,0-8.393,3.357-8.393,8.393v50.361C334.738,197.085,338.095,200.443,343.131,200.443z M351.525,150.082h50.361v33.574     h-50.361V150.082z"
+                                                    data-original="#000000" class="active-path"
+                                                    data-old_color="#ff3a6d" fill="#ff3a6d" />
+                                                <path
+                                                    d="M217.229,292.771h67.148c5.036,0,8.393-3.357,8.393-8.393v-50.361c0-5.036-3.357-8.393-8.393-8.393h-67.148     c-5.036,0-8.393,3.357-8.393,8.393v50.361C208.836,289.413,212.193,292.771,217.229,292.771z M225.623,242.41h50.361v33.574     h-50.361V242.41z"
+                                                    data-original="#000000" class="active-path"
+                                                    data-old_color="#ff3a6d" fill="#ff3a6d" />
+                                                <path
+                                                    d="M343.131,292.771h67.148c5.036,0,8.393-3.357,8.393-8.393v-50.361c0-5.036-3.357-8.393-8.393-8.393h-67.148     c-5.036,0-8.393,3.357-8.393,8.393v50.361C334.738,289.413,338.095,292.771,343.131,292.771z M351.525,242.41h50.361v33.574     h-50.361V242.41z"
+                                                    data-original="#000000" class="active-path"
+                                                    data-old_color="#ff3a6d" fill="#ff3a6d" />
+                                                <path
+                                                    d="M158.475,225.623H91.328c-5.036,0-8.393,3.357-8.393,8.393v50.361c0,5.036,3.357,8.393,8.393,8.393h67.148     c5.036,0,8.393-3.357,8.393-8.393v-50.361C166.869,228.98,163.511,225.623,158.475,225.623z M150.082,275.984H99.721V242.41     h50.361V275.984z"
+                                                    data-original="#000000" class="active-path"
+                                                    data-old_color="#ff3a6d" fill="#ff3a6d" />
+                                                <path
+                                                    d="M217.229,108.115h67.148c5.036,0,8.393-3.357,8.393-8.393V49.361c0-5.036-3.357-8.393-8.393-8.393h-67.148     c-5.036,0-8.393,3.357-8.393,8.393v50.361C208.836,104.757,212.193,108.115,217.229,108.115z M225.623,57.754h50.361v33.574     h-50.361V57.754z"
+                                                    data-original="#000000" class="active-path"
+                                                    data-old_color="#ff3a6d" fill="#ff3a6d" />
+                                                <path
+                                                    d="M343.131,108.115h67.148c5.036,0,8.393-3.357,8.393-8.393V49.361c0-5.036-3.357-8.393-8.393-8.393h-67.148     c-5.036,0-8.393,3.357-8.393,8.393v50.361C334.738,104.757,338.095,108.115,343.131,108.115z M351.525,57.754h50.361v33.574     h-50.361V57.754z"
+                                                    data-original="#000000" class="active-path"
+                                                    data-old_color="#ff3a6d" fill="#ff3a6d" />
+                                                <path
+                                                    d="M200.443,334.738h100.721c5.036,0,8.393-3.357,8.393-8.393c0-5.036-3.357-8.393-8.393-8.393H200.443     c-5.036,0-8.393,3.357-8.393,8.393C192.049,331.38,195.407,334.738,200.443,334.738z"
+                                                    data-original="#000000" class="active-path"
+                                                    data-old_color="#ff3a6d" fill="#ff3a6d" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                            <h6>Hotel</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 category-responsive">
+                    <a href="#" class="category-wrap">
+                        <div class="category-block">
+                            <svg class="category-img" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_3" x="0px"
+                                y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                                xml:space="preserve" width="512px" height="512px">
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M454.976,43.056c-3.591-3.588-9.411-3.591-13.003,0l-95.329,95.326c-3.592,3.591-3.592,9.411-0.001,13.003    c1.796,1.795,4.148,2.692,6.502,2.692c2.352,0,4.706-0.897,6.502-2.692l95.329-95.326    C458.566,52.467,458.566,46.646,454.976,43.056z"
+                                                data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                                fill="#ff3a6d" />
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M480.9,68.571c-3.592-3.589-9.412-3.589-13.003,0l-95.328,95.328c-3.59,3.592-3.59,9.412-0.001,13.003    c1.796,1.795,4.15,2.692,6.502,2.692c2.352,0,4.706-0.897,6.502-2.692L480.9,81.573C484.491,77.982,484.491,72.161,480.9,68.571z"
+                                                data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                                fill="#ff3a6d" />
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M390.969,229.548L509.307,111.21c3.591-3.592,3.591-9.412,0-13.003c-3.592-3.588-9.412-3.591-13.003,0L377.968,216.545    c-14.579,14.578-36.871,18.403-55.47,9.521c-3.7-1.766-8.118-0.873-10.839,2.193l-40.209,45.303    c-0.016,0.017-0.034,0.032-0.05,0.05c-0.016,0.018-0.028,0.037-0.044,0.055L97.567,469.464c-0.044,0.05-0.088,0.101-0.131,0.152    c-0.573,0.673-1.114,1.264-1.662,1.813c-11.475,11.474-30.145,11.473-41.615,0c-5.558-5.557-8.619-12.948-8.619-20.808    s3.061-15.25,8.629-20.818c0.534-0.537,1.124-1.076,1.803-1.654c0.052-0.043,0.102-0.087,0.152-0.131l108.648-96.434    c3.798-3.371,4.143-9.182,0.773-12.979c-3.371-3.799-9.183-4.146-12.979-0.773L43.99,414.202    c-1.038,0.885-1.967,1.742-2.833,2.609c-9.031,9.031-14.005,21.038-14.005,33.81c0,12.771,4.973,24.779,14.004,33.81    c9.323,9.321,21.566,13.982,33.812,13.981c12.241,0,24.487-4.659,33.803-13.976c0.883-0.881,1.738-1.811,2.616-2.839    l132.432-149.206l132.434,149.208c0.877,1.029,1.732,1.959,2.609,2.834c9.321,9.321,21.565,13.981,33.809,13.981    c12.245,0,24.49-4.661,33.812-13.982c18.64-18.643,18.64-48.975,0.005-67.613c-0.88-0.883-1.811-1.738-2.838-2.615    l-152.391-135.26l29.815-33.592C345.231,253.911,372.565,247.949,390.969,229.548z M431.514,428.019    c0.05,0.044,0.101,0.088,0.152,0.131c0.673,0.573,1.264,1.114,1.813,1.662c11.473,11.474,11.473,30.143,0.001,41.615    c-11.475,11.473-30.144,11.473-41.622-0.005c-0.543-0.543-1.086-1.135-1.659-1.808c-0.043-0.051-0.087-0.102-0.131-0.152    L256.111,318.54l22.939-25.845L431.514,428.019z"
+                                                data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                                fill="#ff3a6d" />
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M427.379,16.278c-3.592-3.589-9.412-3.589-13.003,0L296.04,134.617c-18.406,18.404-24.366,45.735-15.807,69.897    l-36.415,32.322l-34.998-31.064c18.099-35.612,11.492-78.851-17.222-107.566c-28.518-28.518-61.55-48.587-93.011-56.508    c-32.843-8.267-61.001-2.748-79.295,15.545s-23.814,46.455-15.545,79.296c7.922,31.459,27.99,64.491,56.51,93.008    c28.714,28.716,71.952,35.323,107.566,17.223c0,0,34.225,38.558,34.659,39.048c1.817,2.047,4.342,3.09,6.88,3.09    c2.171,0,4.349-0.764,6.1-2.318l81.866-72.664c3.065-2.721,3.958-7.141,2.193-10.839c-8.884-18.601-5.058-40.891,9.521-55.468    L427.379,29.281C430.97,25.689,430.97,19.869,427.379,16.278z M210.131,266.737l-33.468-37.706    c-2.964-3.339-7.902-4.069-11.702-1.722c-29.478,18.177-67.188,13.754-91.704-10.763c-26.204-26.203-44.557-56.21-51.68-84.497    c-6.625-26.317-2.819-48.267,10.718-61.803C45.83,56.708,67.78,52.904,94.096,59.53c28.287,7.122,58.296,25.474,84.498,51.678    c24.516,24.515,28.94,62.225,10.762,91.703c-2.344,3.801-1.617,8.737,1.722,11.702l38.888,34.516L210.131,266.737z"
+                                                data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                                fill="#ff3a6d" />
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                            <h6>Restaurant</h6>
+                        </div>
+                    </a>
+                </div> --}}
+            </div>
+
+            {{-- <div class="row">
+                <div class="col-md-3 category-responsive">
+                    <a href="#" class="category-wrap">
+                        <div class="category-block">
+                            <svg class="category-img" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_2" x="0px"
+                                y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;"
+                                xml:space="preserve" width="512px" height="512px">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M59,16V2H1v14H0v37.259C0,55.873,2.127,58,4.742,58h50.517C57.873,58,60,55.873,60,53.259V16H59z M56.5,16l-5.18-6.906   L56.414,4H57v12H56.5z M11,16V9c0-0.024-0.012-0.046-0.014-0.07c-0.005-0.064-0.02-0.124-0.036-0.187   c-0.011-0.042-0.01-0.085-0.027-0.125c-0.009-0.022-0.027-0.039-0.037-0.061c-0.027-0.055-0.065-0.102-0.103-0.152   c-0.028-0.036-0.044-0.081-0.077-0.113L6.414,4h47.172l-4.292,4.292c-0.032,0.032-0.049,0.077-0.077,0.113   c-0.038,0.05-0.075,0.097-0.102,0.152c-0.011,0.022-0.028,0.038-0.038,0.061c-0.017,0.04-0.016,0.084-0.027,0.125   c-0.017,0.063-0.032,0.122-0.036,0.187C49.012,8.954,49,8.976,49,9v7H11z M6,16l3-4.001V16H6z M51,11.999L54,16h-3V11.999z M3,4   h0.586L8.68,9.094L3.5,16H3V4z M58,53.259C58,54.771,56.77,56,55.258,56H4.742C3.23,56,2,54.771,2,53.259V18h56V53.259z"
+                                            data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                            fill="#ff3a6d" />
+                                        <path
+                                            d="M42,24c-0.552,0-1,0.447-1,1v6c0,6.065-4.935,11-11,11s-11-4.935-11-11v-6c0-0.553-0.448-1-1-1s-1,0.447-1,1v6   c0,7.168,5.832,13,13,13s13-5.832,13-13v-6C43,24.447,42.552,24,42,24z"
+                                            data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                            fill="#ff3a6d" />
+                                        <path
+                                            d="M20,25c0,0.553,0.448,1,1,1s1-0.447,1-1c0-2.206-1.794-4-4-4s-4,1.794-4,4c0,0.553,0.448,1,1,1s1-0.447,1-1   c0-1.103,0.897-2,2-2S20,23.897,20,25z"
+                                            data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                            fill="#ff3a6d" />
+                                        <path
+                                            d="M42,21c-2.206,0-4,1.794-4,4c0,0.553,0.448,1,1,1s1-0.447,1-1c0-1.103,0.897-2,2-2s2,0.897,2,2c0,0.553,0.448,1,1,1   s1-0.447,1-1C46,22.794,44.206,21,42,21z"
+                                            data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                            fill="#ff3a6d" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <h6>Shopping</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 category-responsive">
+                    <a href="#" class="category-wrap">
+                        <div class="category-block">
+                            <svg class="category-img" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_3" x="0px"
+                                y="0px" viewBox="0 0 511.988 511.988"
+                                style="enable-background:new 0 0 511.988 511.988;" xml:space="preserve"
+                                width="512px" height="512px">
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M489.865,433.23c-1.643-3.989-5.547-6.592-9.856-6.592H10.676c-4.309,0-8.213,2.603-9.856,6.592    c-1.664,3.989-0.747,8.576,2.304,11.627l23.915,23.915c11.371,11.349,25.003,21.867,47.616,21.867h341.333    c22.613,0,36.245-10.517,47.659-21.867l23.915-23.915C490.612,441.806,491.529,437.22,489.865,433.23z M448.521,453.689    c-11.541,11.541-20.053,15.616-32.533,15.616H74.655c-12.48,0-20.992-4.075-32.533-15.616l-5.717-5.717h417.835L448.521,453.689z"
+                                                data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                                fill="#ff3a6d" />
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M373.322,191.972h-256c-17.643,0-32,14.357-32,32v64c0,61.333,27.691,118.784,75.947,157.632    c4.608,3.691,11.328,2.987,14.997-1.621c3.691-4.587,2.965-11.307-1.621-14.997c-43.221-34.773-68.011-86.165-68.011-141.013v-64    c0-5.867,4.779-10.667,10.667-10.667h256c5.888,0,10.667,4.8,10.667,10.667v64c0,54.827-24.789,106.219-68.011,141.013    c-4.587,3.691-5.312,10.411-1.621,14.997c2.112,2.645,5.205,3.989,8.32,3.989c2.347,0,4.715-0.768,6.677-2.347    c48.299-38.869,75.989-96.32,75.989-157.653v-64C405.322,206.329,390.964,191.972,373.322,191.972z"
+                                                data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                                fill="#ff3a6d" />
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M328.372,102.628c17.344-21.675,17.344-55.616,0-77.291c-3.691-4.565-10.389-5.333-14.997-1.664    c-4.587,3.691-5.333,10.389-1.664,14.997c10.987,13.739,10.987,36.885-0.021,50.667c-17.344,21.675-17.344,55.616,0,77.291    c2.112,2.645,5.205,4.011,8.341,4.011c2.325,0,4.693-0.768,6.635-2.347c4.608-3.691,5.355-10.389,1.664-14.997    C317.343,139.556,317.343,116.409,328.372,102.628z"
+                                                data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                                fill="#ff3a6d" />
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M264.308,102.628c17.344-21.675,17.344-55.616,0-77.291c-3.669-4.565-10.389-5.333-14.997-1.664    c-4.608,3.691-5.355,10.389-1.664,14.997c10.987,13.739,10.987,36.885-0.043,50.667c-17.344,21.675-17.344,55.616,0,77.291    c2.112,2.645,5.205,4.011,8.341,4.011c2.325,0,4.672-0.768,6.677-2.347c4.587-3.691,5.333-10.389,1.664-14.997    C253.3,139.556,253.3,116.409,264.308,102.628z"
+                                                data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                                fill="#ff3a6d" />
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M200.372,102.628c17.344-21.675,17.344-55.616,0-77.291c-3.691-4.565-10.368-5.333-14.997-1.664    c-4.587,3.691-5.333,10.411-1.664,14.997c10.987,13.739,10.987,36.885-0.021,50.667c-17.344,21.675-17.344,55.616,0,77.291    c2.112,2.645,5.205,4.011,8.341,4.011c2.325,0,4.693-0.768,6.656-2.325c4.608-3.691,5.355-10.389,1.664-14.997    C189.364,139.577,189.364,116.409,200.372,102.628z"
+                                                data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                                fill="#ff3a6d" />
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M447.988,213.305c-35.285,0-64,28.715-64,64s28.715,64,64,64c35.285,0,64-28.715,64-64S483.273,213.305,447.988,213.305z     M447.988,319.972c-23.531,0-42.667-19.136-42.667-42.667c0-23.531,19.136-42.667,42.667-42.667    c23.531,0,42.667,19.136,42.667,42.667C490.655,300.836,471.519,319.972,447.988,319.972z"
+                                                data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                                fill="#ff3a6d" />
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                            <h6>Coffee</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 category-responsive">
+                    <a href="#" class="category-wrap">
+                        <div class="category-block">
+                            <svg class="category-img" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_4" x="0px"
+                                y="0px" viewBox="0 0 33 33" style="enable-background:new 0 0 33 33;"
+                                xml:space="preserve" width="512px" height="512px">
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="M20.136,33h-9.212c-2.397,0-4.349-1.951-4.349-4.349V11.265c0-0.276,0.224-0.5,0.5-0.5h16.828    c0.276,0,0.581,0.224,0.581,0.5v17.387C24.484,31.049,22.533,33,20.136,33z M7.575,11.765v16.887c0,1.847,1.502,3.349,3.349,3.349    h9.212c1.847,0,3.349-1.502,3.349-3.349V11.765H7.575z"
+                                                data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                                fill="#ff3a6d" />
+                                            <path
+                                                d="M26.096,25.574h-2.111c-0.276,0-0.5-0.224-0.5-0.5s0.224-0.5,0.5-0.5h2.111c1.005,0,1.823-0.818,1.823-1.823v-4.693    c0-1.006-0.818-1.824-1.823-1.824h-2.111c-0.276,0-0.5-0.224-0.5-0.5s0.224-0.5,0.5-0.5h2.111c1.557,0,2.823,1.267,2.823,2.824    v4.693C28.919,24.308,27.652,25.574,26.096,25.574z"
+                                                data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                                fill="#ff3a6d" />
+                                            <g>
+                                                <path
+                                                    d="M11.376,28.365c-0.276,0-0.5-0.224-0.5-0.5V15.691c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v12.174     C11.876,28.142,11.652,28.365,11.376,28.365z"
+                                                    data-original="#000000" class="active-path"
+                                                    data-old_color="#ff3a6d" fill="#ff3a6d" />
+                                                <path
+                                                    d="M19.683,28.365c-0.276,0-0.5-0.224-0.5-0.5V15.691c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v12.174     C20.183,28.142,19.959,28.365,19.683,28.365z"
+                                                    data-original="#000000" class="active-path"
+                                                    data-old_color="#ff3a6d" fill="#ff3a6d" />
+                                                <path
+                                                    d="M15.529,28.365c-0.276,0-0.5-0.224-0.5-0.5V15.691c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v12.174     C16.029,28.142,15.806,28.365,15.529,28.365z"
+                                                    data-original="#000000" class="active-path"
+                                                    data-old_color="#ff3a6d" fill="#ff3a6d" />
+                                            </g>
+                                        </g>
+                                        <path
+                                            d="M23.698,11.765H7.361c-1.809,0-3.28-1.472-3.28-3.28s1.472-3.28,3.28-3.28h0.239C7.936,2.249,10.413,0,13.438,0   c1.795,0,3.482,0.819,4.596,2.213c0.487-0.207,0.993-0.312,1.508-0.312c1.952,0,3.586,1.417,3.909,3.303h0.247   c1.809,0,3.28,1.472,3.28,3.28S25.507,11.765,23.698,11.765z M7.361,6.204c-1.258,0-2.28,1.022-2.28,2.28s1.022,2.28,2.28,2.28   h16.337c1.258,0,2.28-1.022,2.28-2.28s-1.022-2.28-2.28-2.28h-0.693c-0.267,0-0.485-0.208-0.499-0.475   c-0.082-1.586-1.384-2.828-2.964-2.828c-0.485,0-0.964,0.128-1.423,0.38c-0.223,0.124-0.508,0.056-0.652-0.155   C16.554,1.795,15.048,1,13.438,1c-2.646,0-4.786,2.073-4.873,4.721c-0.009,0.27-0.23,0.483-0.5,0.483H7.361z"
+                                            data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                            fill="#ff3a6d" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <h6>Club & Bar</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 category-responsive">
+                    <a href="#" class="category-wrap">
+                        <div class="category-block">
+                            <svg class="category-img" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_5" x="0px"
+                                y="0px" viewBox="0 0 61.168 61.168" style="enable-background:new 0 0 61.168 61.168;"
+                                xml:space="preserve" width="512px" height="512px">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M30.938,26.584c3.859,0,7-3.141,7-7s-3.141-7-7-7s-7,3.141-7,7S27.078,26.584,30.938,26.584z M30.938,14.584   c2.757,0,5,2.243,5,5s-2.243,5-5,5s-5-2.243-5-5S28.181,14.584,30.938,14.584z"
+                                            data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                            fill="#ff3a6d" />
+                                        <path
+                                            d="M50.216,37.584h-7.161l3.047-4.4c5.755-7.671,4.922-20.28-1.781-26.982c-3.621-3.622-8.437-5.617-13.56-5.617   c-5.122,0-9.938,1.995-13.56,5.617c-6.703,6.702-7.536,19.312-1.804,26.952l3.068,4.431h-7.513L0,60.584h61.168L50.216,37.584z    M17.02,31.984c-5.199-6.933-4.454-18.32,1.596-24.369c3.244-3.244,7.558-5.031,12.146-5.031s8.901,1.787,12.146,5.031   c6.05,6.049,6.795,17.437,1.573,24.399L30.761,51.827l-9.863-14.243h0L17.02,31.984z M12.216,39.584h7.634l10.911,15.757   l10.91-15.757h7.281l9.048,19H3.168L12.216,39.584z"
+                                            data-original="#000000" class="active-path" data-old_color="#ff3a6d"
+                                            fill="#ff3a6d" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <h6>Destinations</h6>
+                        </div>
+                    </a>
+                </div>
+            </div> --}}
+        </div>
+    </section>
+    <!--//END CATEGORIES -->
+    <!--============================= ADD LISTING =============================-->
+    <section class="main-block light-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="add-listing-wrap">
+                        <h2>Reach millions of People</h2>
+                        <p>Add your Business infront of millions and earn 3x profits from our listing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="featured-btn-wrap">
+                        <a href="#" class="btn btn-danger"><span class="ti-plus"></span> ADD LISTING</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//END ADD LISTING -->
+    <!--============================= FOOTER =============================-->
+    <footer class="main-block dark-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p>Copyright &copy; 2018 Listing. All rights reserved | This template is made with <i
+                                class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                                target="_blank">Colorlib</a></p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <ul>
+                            <li><a href="#"><span class="ti-facebook"></span></a></li>
+                            <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                            <li><a href="#"><span class="ti-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--//END FOOTER -->
+
+
+
+
+    <!-- jQuery, Bootstrap JS. -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{{ asset('assets/js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+
+    <script>
+        $(window).scroll(function() {
+            // 100 = The point you would like to fade the nav in.
+
+            if ($(window).scrollTop() > 100) {
+
+                $('.fixed').addClass('is-sticky');
+
+            } else {
+
+                $('.fixed').removeClass('is-sticky');
+
+            };
+        });
+    </script>
+</body>
+
 </html>
