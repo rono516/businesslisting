@@ -102,7 +102,8 @@
                     <div class="row detail-filter-wrap">
                         <div class="col-md-4 featured-responsive">
                             <div class="detail-filter-text">
-                                <p>34 Results For <span> {{ $business_category->name }}</span></p>
+                                <p>{{ count($businesses) }} Result's For <span> {{ $business_category->name }}</span>
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-8 featured-responsive">
@@ -190,39 +191,41 @@
                         </div>
                     </div>
                     <div class="row light-bg detail-options-wrap">
-                        <div class="col-sm-6 col-lg-12 col-xl-6 featured-responsive">
-                            <div class="featured-place-wrap">
-                                <a href="detail.html">
-                                    <img src="{{ asset('assets/images/featured1.jpg') }}" class="img-fluid"
-                                        alt="#">
-                                    <span class="featured-rating-orange ">6.5</span>
-                                    <div class="featured-title-box">
-                                        <h6>Burger &amp; Lobster</h6>
-                                        <p>Restaurant </p> <span>• </span>
-                                        <p>3 Reviews</p> <span> • </span>
-                                        <p><span>$$$</span>$$</p>
-                                        <ul>
-                                            <li><span class="icon-location-pin"></span>
-                                                <p>1301 Avenue, Brooklyn, NY 11230</p>
-                                            </li>
-                                            <li><span class="icon-screen-smartphone"></span>
-                                                <p>+44 20 7336 8898</p>
-                                            </li>
-                                            <li><span class="icon-link"></span>
-                                                <p>https://burgerandlobster.com</p>
-                                            </li>
+                        @foreach ($businesses as $bs)
+                            <div class="col-sm-6 col-lg-12 col-xl-6 featured-responsive">
+                                <div class="featured-place-wrap">
+                                    <a href="detail.html">
+                                        <img src="{{ asset('assets/images/featured1.jpg') }}" class="img-fluid"
+                                            alt="#">
+                                        <span class="featured-rating-orange ">6.5</span>
+                                        <div class="featured-title-box">
+                                            <h6>{{ $bs->name }}</h6>
+                                            <p>{{ $bs->category->name }} </p> <span>• </span>
+                                            <p>3 Reviews</p> <span> • </span>
+                                            <p><span>$$$</span>$$</p>
+                                            <ul>
+                                                <li><span class="icon-location-pin"></span>
+                                                    <p>1301 {{ $bs->business_location }}</p>
+                                                </li>
+                                                <li><span class="icon-screen-smartphone"></span>
+                                                    <p>{{ $bs->business_phone_number }}</p>
+                                                </li>
+                                                <li><span class="icon-link"></span>
+                                                    <p>{{ $bs->website_link }}</p>
+                                                </li>
 
-                                        </ul>
-                                        <div class="bottom-icons">
-                                            <div class="closed-now">CLOSED NOW</div>
-                                            <span class="ti-heart"></span>
-                                            <span class="ti-bookmark"></span>
+                                            </ul>
+                                            <div class="bottom-icons">
+                                                <div class="closed-now">CLOSED NOW</div>
+                                                <span class="ti-heart"></span>
+                                                <span class="ti-bookmark"></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-12 col-xl-6 featured-responsive">
+                        @endforeach
+                        {{-- <div class="col-sm-6 col-lg-12 col-xl-6 featured-responsive">
                             <div class="featured-place-wrap">
                                 <a href="detail.html">
                                     <img src="{{ asset('assets/images/featured2.jpg') }}" class="img-fluid"
@@ -318,7 +321,7 @@
                                     </div>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-md-5 responsive-wrap map-wrap">
