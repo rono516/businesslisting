@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('website_link');
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('user_id');
+            $table->boolean('is_active')->default(false);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

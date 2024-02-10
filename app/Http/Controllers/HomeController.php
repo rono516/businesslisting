@@ -17,11 +17,13 @@ class HomeController extends Controller
 
     public function category_detail($id)
     {
+        $business_categories = Category::all();
         $business_category = Category::find($id);
         $businesses = Business::all()->where('id', $business_category->id);
         return view('category_detail')->with([
             'business_category' => $business_category,
-            'businesses' => $businesses
+            'businesses' => $businesses,
+            'business_categories' => $business_categories
         ]);
     }
 }

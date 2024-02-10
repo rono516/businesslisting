@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html">Listing</a>
+                        <a class="navbar-brand" href="{{ url('/') }}">Business Listing</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                             aria-label="Toggle navigation">
@@ -49,9 +49,13 @@
                                         <span class="icon-arrow-down"></span>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Action</a>
+                                        @foreach ($business_categories as $bs)
+                                            <a class="dropdown-item"
+                                                href="{{ route('businesses', $bs->id) }}">{{ $bs->name }}</a>
+                                        @endforeach
+                                        {{-- <a class="dropdown-item" href="#">Action</a>
                                         <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Something else here</a> --}}
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -61,12 +65,13 @@
                                         <span class="icon-arrow-down"></span>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Add New Listing</a>
+                                            <a class="dropdown-item" href="#">My businesses</a>
+                                        </div>
                                     </div>
                                 </li>
-                                <li class="nav-item dropdown">
+                                {{-- <li class="nav-item dropdown">
                                     <a class="nav-link" href="#" id="navbarDropdownMenuLink2"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Pages
@@ -77,7 +82,7 @@
                                         <a class="dropdown-item" href="#">Another action</a>
                                         <a class="dropdown-item" href="#">Something else here</a>
                                     </div>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item active">
                                     <a class="nav-link" href="#">About</a>
                                 </li>

@@ -16,6 +16,7 @@ class Business extends Model
         "website_link",
         "category_id",
         "user_id",
+        'is_active',
     ];
 
     public function category()
