@@ -148,7 +148,7 @@
             <div class="row">
                 <div class="col-md-4 featured-responsive">
                     <div class="featured-place-wrap">
-                        <a href="detail.html">
+                        <a href="#">
                             <img src="{{ asset('assets/images/featured1.jpg') }}" class="img-fluid" alt="#">
                             <span class="featured-rating-orange">6.5</span>
                             <div class="featured-title-box">
@@ -179,7 +179,7 @@
                 </div>
                 <div class="col-md-4 featured-responsive">
                     <div class="featured-place-wrap">
-                        <a href="detail.html">
+                        <a href="#">
                             <img src="{{ asset('assets/images/featured2.jpg') }}" class="img-fluid" alt="#">
                             <span class="featured-rating-green">9.5</span>
                             <div class="featured-title-box">
@@ -210,7 +210,7 @@
                 </div>
                 <div class="col-md-4 featured-responsive">
                     <div class="featured-place-wrap">
-                        <a href="detail.html">
+                        <a href="#">
                             <img src="{{ asset('assets/images/featured3.jpg') }}" class="img-fluid" alt="#">
                             <span class="featured-rating">3.2</span>
                             <div class="featured-title-box">
