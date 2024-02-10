@@ -12,7 +12,7 @@
     <!-- Favicons -->
     <link rel="shortcut icon" href="#">
     <!-- Page Title -->
-    <title>Listing &amp; Directory Website Template</title>
+    <title>Business Listing</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <!-- Google Fonts -->
@@ -94,6 +94,10 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="text-center p-5 ">
+        <h3 class="text-lg"> Add your business and reach more customers</h3>
     </div>
 
     <section class="light-bg booking-details_wrap">
